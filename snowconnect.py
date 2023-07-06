@@ -8,7 +8,7 @@ con1 = sncon.connect(
   account = 'vi98550.ap-southeast-1.aws',
   warehouse = 'COMPUTE_WH',
   database = 'COVID19_EPIDEMIOLOGICAL_DATA',
-  schema = 'Public')
+  role = 'AccountAdmin')
 cur1 = con1.cursor()
 cur1.execute("select top 100 state, county from DEMOGRAPHICS")
 
