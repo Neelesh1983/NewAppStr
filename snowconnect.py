@@ -1,14 +1,8 @@
 import streamlit as st
 import pandas as pd
-import snowflake.connector as sncon
+import snowflake.connector
 
-con1 = sncon.connect(
-  user = 'Neelesh2023',
-  password = 'Neelesh@2023',
-  account = 'vi98550.ap-southeast-1.aws',
-  warehouse = 'COMPUTE_WH',
-  database = 'COVID19_EPIDEMIOLOGICAL_DATA',
-  role = 'AccountAdmin')
+con1 = snowflake.connector.connect(**st.secrets["snowflake"])
 cur1 = con1.cursor()
 cur1.execute("select top 100 state, county from DEMOGRAPHICS")
 
