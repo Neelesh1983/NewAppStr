@@ -6,3 +6,4 @@ st.title('View Raw Data')
 import snowflake.connector
 from snowflake.connector import ProgrammingError
 
+con = snowflake.connector.connect(**st.secrets["snowflake"])
